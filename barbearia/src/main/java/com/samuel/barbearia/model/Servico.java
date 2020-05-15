@@ -9,8 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -45,5 +44,8 @@ public class Servico implements Serializable {
 
 	@Column(name = "DURACAO_SERVICO")
 	private Time duracao;
+
+	@OneToMany(mappedBy = "servico")
+	Set<FuncionarioServico> funcionarioServicos;
 
 }
