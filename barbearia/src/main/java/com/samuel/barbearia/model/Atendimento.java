@@ -21,31 +21,30 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "TB_ATENDIMENTO")
 @Data
-public class Atendimento implements Serializable{
+public class Atendimento implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_ATENDIMENTO")
 	private Long id;
-	
+
 	@NotNull
 	@Column(name = "DATA_ATENDIMENTO")
 	private LocalDate dataAtendimento;
-	
+
 	@NotNull
 	@Column(name = "HORARIO_ATENDIMENTO")
 	private Time horarioAtendimento;
-	
+
 	@NotNull
 	@Column(name = "STATUS_ATENDIMENTO")
 	private boolean statusAtendimento;
-	
+
 	@Column(name = "AVALIACAO_ATENDIMENTO")
 	private int avaliacaoAtendimento;
 

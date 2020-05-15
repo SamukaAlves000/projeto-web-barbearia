@@ -21,24 +21,24 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "TB_CLIENTE")
 @Data
-public class Cliente implements Serializable{
+public class Cliente implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_CLIENTE")
 	private Long id;
-	
+
 	@Column(name = "PONTO_CLIENTE")
 	private Long ponto;
-	
+
 	@NotNull
 	@OneToOne
-    @JoinColumn(name = "ID_PESSOA")
-    private Pessoa pessoa;
+	@JoinColumn(name = "ID_PESSOA")
+	private Pessoa pessoa;
 
 }

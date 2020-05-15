@@ -24,25 +24,25 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "TB_FUNCIONARIO")
 @Data
-public class Funcionario implements Serializable{
+public class Funcionario implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_FUNCIONARIO")
 	private Long id;
-	
+
 	@NotNull
 	@Column(name = "SALARIO_FUNCIONARIO")
 	private double salario;
 
 	@NotNull
 	@OneToOne
-    @JoinColumn(name = "ID_PESSOA")
-    private Pessoa pessoa;
+	@JoinColumn(name = "ID_PESSOA")
+	private Pessoa pessoa;
 
 }

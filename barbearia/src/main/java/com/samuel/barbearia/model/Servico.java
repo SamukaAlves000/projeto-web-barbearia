@@ -46,5 +46,4 @@ public class Servico implements Serializable {
 	@Column(name = "DURACAO_SERVICO")
 	private Time duracao;
 
-
 }

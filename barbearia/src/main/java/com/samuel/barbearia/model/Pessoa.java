@@ -22,13 +22,13 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "TB_PESSOA")
 @Data
-public class Pessoa implements Serializable{
+public class Pessoa implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID_PESSOA")
@@ -64,11 +64,11 @@ public class Pessoa implements Serializable{
 
 	@Column(name = "DATA_NASCIMENTO_PESSOA")
 	private LocalDate dataNascimento;
-	
+
 	@OneToOne(mappedBy = "pessoa", fetch = FetchType.LAZY)
-    private Funcionario funcionario;
-	
+	private Funcionario funcionario;
+
 	@OneToOne(mappedBy = "pessoa", fetch = FetchType.LAZY)
-    private Cliente cliente;
- 
+	private Cliente cliente;
+
 }
