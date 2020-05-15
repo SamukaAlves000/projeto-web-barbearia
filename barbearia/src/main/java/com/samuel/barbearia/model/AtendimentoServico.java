@@ -1,8 +1,6 @@
 package com.samuel.barbearia.model;
 
 import java.io.Serializable;
-import java.sql.Time;
-import java.util.Set;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -15,25 +13,26 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "TB_FUNCIONARIO_SERVICO")
-public class FuncionarioServico implements Serializable {
+@Table(name = "TB_ATENDIMENTO_SERVICO")
+public class AtendimentoServico implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
 	@EmbeddedId
-	FuncionarioServicoKey id;
+	AtendimentoServicoKey id;
 
 	@ManyToOne
-	@MapsId("ID_FUNCIONARIO")
-	@JoinColumn(name = "ID_FUNCIONARIO")
-	Funcionario funcionario;
+	@MapsId("ID_ATENDIMENTO")
+	@JoinColumn(name = "ID_ATENDIMENTO")
+	Atendimento atendimento;
 
 	@ManyToOne
 	@MapsId("ID_SERVICO")

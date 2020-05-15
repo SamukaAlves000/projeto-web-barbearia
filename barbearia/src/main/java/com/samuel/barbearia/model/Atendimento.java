@@ -3,12 +3,14 @@ package com.samuel.barbearia.model;
 import java.io.Serializable;
 import java.sql.Time;
 import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -47,5 +49,8 @@ public class Atendimento implements Serializable {
 
 	@Column(name = "AVALIACAO_ATENDIMENTO")
 	private int avaliacaoAtendimento;
+	
+	@OneToMany(mappedBy = "atendimento")
+	Set<AtendimentoServico> atendimentoServicos;
 
 }
