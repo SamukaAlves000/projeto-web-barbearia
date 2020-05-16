@@ -47,7 +47,7 @@ public class Servico implements Serializable {
 
 	@OneToMany(mappedBy = "servico")
 	Set<FuncionarioServico> funcionarioServicos;
-	
+
 	@OneToMany(mappedBy = "servico")
 	Set<AtendimentoServico> atendimentoServicos;
 

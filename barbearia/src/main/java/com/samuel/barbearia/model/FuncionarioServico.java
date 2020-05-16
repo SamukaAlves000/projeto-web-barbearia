@@ -1,8 +1,6 @@
 package com.samuel.barbearia.model;
 
 import java.io.Serializable;
-import java.sql.Time;
-import java.util.Set;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;

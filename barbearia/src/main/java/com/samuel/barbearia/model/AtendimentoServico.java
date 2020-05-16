@@ -13,19 +13,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
 @Table(name = "TB_ATENDIMENTO_SERVICO")
-public class AtendimentoServico implements Serializable{
+public class AtendimentoServico implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@EmbeddedId
 	AtendimentoServicoKey id;
 

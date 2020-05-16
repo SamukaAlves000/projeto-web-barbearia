@@ -1,0 +1,15 @@
+CREATE TABLE tb_atendimento (id_atendimento bigint not null auto_increment, avaliacao_atendimento integer, data_atendimento date not null, horario_atendimento time not null, status_atendimento varchar(45) not null, id_cliente bigint not null, id_funcionario bigint not null, primary key (id_atendimento)) engine=InnoDB
+CREATE TABLE tb_atendimento_servico (id_atendimento bigint not null, id_servico bigint not null, primary key (id_atendimento, id_servico)) engine=InnoDB
+CREATE TABLE tb_cliente (id_cliente bigint not null auto_increment, ponto_cliente bigint, id_pessoa bigint not null, primary key (id_cliente)) engine=InnoDB
+CREATE TABLE tb_funcionario (id_funcionario bigint not null auto_increment, salario_funcionario double precision not null, id_pessoa bigint not null, primary key (id_funcionario)) engine=InnoDB
+CREATE TABLE tb_funcionario_servico (id_funcionario bigint not null, id_servico bigint not null, primary key (id_funcionario, id_servico)) engine=InnoDB
+CREATE TABLE tb_pessoa (id_pessoa bigint not null auto_increment, cidade_pessoa varchar(90), complemento_pessoa varchar(45), cpf_pessoa varchar(11), data_nascimento_pessoa date, email_pessoa varchar(90), logradouro_pessoa varchar(45), nome_pessoa varchar(90) not null, sexo_pessoa varchar(1), telefone_pessoa varchar(15), uf_pessoa varchar(3), primary key (id_pessoa)) engine=InnoDB
+CREATE TABLE tb_servico (id_servico bigint not null auto_increment, descricao_servico varchar(45) not null, duracao_servico time, valor_servico double precision not null, primary key (id_servico)) engine=InnoDB
+ALTER TABLE tb_atendimento add constraint FK4t5043w8b1t9xkioabi2bm628 foreign key (id_cliente) REFERENCES tb_cliente (id_cliente)
+ALTER TABLE tb_atendimento add constraint FKsjxlsp4lrk06caqp1qimbww0p foreign key (id_funcionario) REFERENCES tb_funcionario (id_funcionario)
+ALTER TABLE tb_atendimento_servico add constraint FKfl8mwe2946rf0bmodm7tb60dt foreign key (id_atendimento) REFERENCES tb_atendimento (id_atendimento)
+ALTER TABLE tb_atendimento_servico add constraint FK2jomymkykgt05ycxvlslqgbef foreign key (id_servico) REFERENCES tb_servico (id_servico)
+ALTER TABLE tb_cliente add constraint FK84n2v0pnhf49kc025k6mdrqmk foreign key (id_pessoa) REFERENCES tb_pessoa (id_pessoa)
+ALTER TABLE tb_funcionario add constraint FKpy8rs2ob0yweklwas7oqf8a5i foreign key (id_pessoa) REFERENCES tb_pessoa (id_pessoa)
+ALTER TABLE tb_funcionario_servico add constraint FKenbbp7n3m63ai1fw0bib1akag foreign key (id_funcionario) REFERENCES tb_funcionario (id_funcionario)
+ALTER TABLE tb_funcionario_servico add constraint FKghla08fu2yvquu669oi9bcdco foreign key (id_servico) REFERENCES tb_servico (id_servico)

@@ -10,6 +10,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -44,13 +47,22 @@ public class Atendimento implements Serializable {
 	private Time horarioAtendimento;
 
 	@NotNull
-	@Column(name = "STATUS_ATENDIMENTO")
-	private boolean statusAtendimento;
+	@Column(name = "STATUS_ATENDIMENTO", length = 45)
+	private String statusAtendimento;
 
 	@Column(name = "AVALIACAO_ATENDIMENTO")
 	private int avaliacaoAtendimento;
-	
+
 	@OneToMany(mappedBy = "atendimento")
 	Set<AtendimentoServico> atendimentoServicos;
+
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name = "ID_FUNCIONARIO")
+	Funcionario funcionario;
+	@NotNull
+	@ManyToOne
+	@JoinColumn(name = "ID_CLIENTE")
+	Cliente cliente;
 
 }

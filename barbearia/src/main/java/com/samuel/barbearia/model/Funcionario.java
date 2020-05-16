@@ -1,7 +1,6 @@
 package com.samuel.barbearia.model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -10,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -45,8 +43,11 @@ public class Funcionario implements Serializable {
 	@OneToOne
 	@JoinColumn(name = "ID_PESSOA")
 	private Pessoa pessoa;
-	
+
 	@OneToMany(mappedBy = "funcionario")
 	Set<FuncionarioServico> funcionarioServicos;
+
+	@OneToMany(mappedBy = "funcionario")
+	Set<Atendimento> atendimentos;
 
 }
