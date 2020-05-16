@@ -14,6 +14,10 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -38,11 +42,13 @@ public class Cliente implements Serializable {
 	@Column(name = "PONTO_CLIENTE")
 	private Long ponto;
 
+	@JsonBackReference
 	@NotNull
 	@OneToOne
 	@JoinColumn(name = "ID_PESSOA")
 	private Pessoa pessoa;
 
+	@JsonIgnore
 	@OneToMany(mappedBy = "cliente")
 	Set<Atendimento> atendimentos;
 

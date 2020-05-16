@@ -13,6 +13,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -65,9 +68,13 @@ public class Pessoa implements Serializable {
 	@Column(name = "DATA_NASCIMENTO_PESSOA")
 	private LocalDate dataNascimento;
 
+
+	@JsonManagedReference
 	@OneToOne(mappedBy = "pessoa", fetch = FetchType.LAZY)
 	private Funcionario funcionario;
 
+	
+	@JsonManagedReference
 	@OneToOne(mappedBy = "pessoa", fetch = FetchType.LAZY)
 	private Cliente cliente;
 

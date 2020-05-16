@@ -60,6 +60,7 @@ public class Atendimento implements Serializable {
 	@ManyToOne
 	@JoinColumn(name = "ID_FUNCIONARIO")
 	Funcionario funcionario;
+	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "ID_CLIENTE")
