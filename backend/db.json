@@ -1,0 +1,24 @@
+{
+    "servicos":[
+        {
+            "idServico":1,
+            "descricaoServico":"Corte Simples",
+            "valorServico":15.00
+        },
+        {
+            "idServico":2,
+            "descricaoServico":"Corte degradê",
+            "valorServico":20.00
+        },
+        {
+            "idServico":3,
+            "descricaoServico":"Barba",
+            "valorServico":10.00
+        },
+        {
+            "idServico":4,
+            "descricaoServico":"Corte completo",
+            "valorServico":30.00
+        }
+    ]
+}
