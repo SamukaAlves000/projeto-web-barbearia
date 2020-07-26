@@ -1,7 +1,9 @@
-import { ServicosCrudComponent } from './views/servicos-crud/servicos-crud.component';
+import { ServicoCreateComponent } from './components/servico/servico-create/servico-create.component';
+
 import { HomeComponent } from './views/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ServicoCrudComponent } from './views/servico-crud/servico-crud.component';
 
 
 const routes: Routes = [{
@@ -11,7 +13,11 @@ const routes: Routes = [{
 },
 {
   path: "servicos",
-  component: ServicosCrudComponent
+  component: ServicoCrudComponent
+},
+{
+  path: "servicos/create",
+  component: ServicoCreateComponent
 }
 ];
 

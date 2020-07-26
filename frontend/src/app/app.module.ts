@@ -11,11 +11,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
-import { ServicosCrudComponent } from './views/servicos-crud/servicos-crud.component';
+import { ServicoCreateComponent } from './components/servico/servico-create/servico-create.component';
+import { ServicoCrudComponent } from './views/servico-crud/servico-crud.component';
 
 
 
@@ -26,7 +28,9 @@ import { ServicosCrudComponent } from './views/servicos-crud/servicos-crud.compo
     FooterComponent,
     NavComponent,
     HomeComponent,
-    ServicosCrudComponent
+    ServicoCrudComponent,
+    ServicoCreateComponent,
+    ServicoCrudComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,8 @@ import { ServicosCrudComponent } from './views/servicos-crud/servicos-crud.compo
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
