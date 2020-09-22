@@ -1,0 +1,22 @@
+{
+  "servicos": [
+    {
+      "id": 1,
+      "descricao": "Corte Simples",
+      "valor": 15,
+      "duracao": 30
+    },
+    {
+      "id": 2,
+      "descricao": "Corte Degradê",
+      "valor": 20,
+      "duracao": 45
+    },
+    {
+      "id": 3,
+      "descricao": "Barba",
+      "valor": 10,
+      "duracao": 20
+    }
+  ]
+}
