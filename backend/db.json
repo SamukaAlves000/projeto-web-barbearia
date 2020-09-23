@@ -17,6 +17,24 @@
       "descricao": "Barba",
       "valor": 10,
       "duracao": 20
+    },
+    {
+      "descricao": "Teste",
+      "valor": 15,
+      "duracao": 30,
+      "id": 4
+    },
+    {
+      "descricao": "",
+      "valor": null,
+      "duracao": null,
+      "id": 5
+    },
+    {
+      "descricao": "Teste",
+      "valor": "10",
+      "duracao": "10",
+      "id": 6
     }
   ]
 }

@@ -18,6 +18,13 @@ import {MatCardModule} from "@angular/material/card";
 import { ServiceCrudComponent } from './views/service-crud/service-crud.component';
 import { ServiceCreateComponent } from './components/service/service-create/service-create.component';
 import {MatButtonModule} from "@angular/material/button";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import { ServiceReadComponent } from './components/service/service-read/service-read.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +34,8 @@ import {MatButtonModule} from "@angular/material/button";
     NavComponent,
     HomeComponent,
     ServiceCrudComponent,
-    ServiceCreateComponent
+    ServiceCreateComponent,
+    ServiceReadComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +45,12 @@ import {MatButtonModule} from "@angular/material/button";
     MatSidenavModule,
     MatListModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule,
+    HttpClientModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

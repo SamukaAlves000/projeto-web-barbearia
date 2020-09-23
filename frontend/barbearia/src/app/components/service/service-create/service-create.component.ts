@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ServiceService} from "../service.service";
+import {Router} from "@angular/router";
+import {Service} from "../service.model";
 
 @Component({
   selector: 'app-service-create',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServiceCreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serviceService: ServiceService,private router:Router) { }
 
+  service: Service = {
+    descricao: '',
+    valor: null,
+    duracao: null
+  }
   ngOnInit(): void {
   }
 
+  createService():void {
+    this.serviceService.create(this.service).subscribe(() =>{
+      this.serviceService.showMessage("Operação realizada com sucesso!")
+      this.cancel()
+    })
+
+  }
+
+  cancel():void{
+    this.router.navigate(['/services'])
+  }
 }

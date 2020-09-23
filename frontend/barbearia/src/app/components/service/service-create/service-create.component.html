@@ -1,1 +1,25 @@
-<p>service-create works!</p>
+<mat-card>
+  <mat-card-title>
+    New Service
+  </mat-card-title>
+  <form>
+    <mat-form-field>
+      <input matInput placeholder="Descrição" [(ngModel)]="service.descricao" name="descricao">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Valor (R$)" [(ngModel)]="service.valor" name="valor">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Duração" [(ngModel)]="service.duracao" name="duracao">
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button class="myBotton" (click)="createService()" >
+    <a>Save</a>
+  </button>
+
+  <button mat-raised-button  (click)="cancel()" >
+    <a>Cancel</a>
+  </button>
+
+</mat-card>
